@@ -15,14 +15,14 @@ const prompt = require("prompt-sync")();
 
 // Find the minimum number in the array
 // let arr = [23, 24, 56, 78, 100, 2, 34, 56, 78, 89];
-// let max = arr[0];
+// let min = arr[0];
 
 // for (let i = 1; i < arr.length; i++) {
-//   if (max > arr[i]) {
-//     max = arr[i];
+//   if (min > arr[i]) {
+//     min = arr[i];
 //   }
 // }
-// console.log(`Minimum number in the array is: ${max}`);
+// console.log(`Minimum number in the array is: ${min}`);
 
 // Find the maximum number in the array
 // let arr = [23, 24, 56, 78, 100, 2, 34, 56, 78, 89];
@@ -92,19 +92,16 @@ const prompt = require("prompt-sync")();
 // console.log(`Original array is: ${arr}`);
 
 // let arr = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1];
-let arr = [-1, 2, 3, -5, 6, 9, -10, -44, 4, -88, 77];
-
-let i = 0;
-let j = 0;
-
-while (i < arr.length) {
-  if (arr[i] < 0) {
-    temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-    j++;
-  }
-  i++;
-}
-
-console.log(`Sorted array is: ${arr}`);
+// let arr = [-1, 2, 3, -5, 6, 9, -10, -44, 4, -88, 77];
+// let i = 0;
+// let j = 0;
+// while (i < arr.length) {
+//   if (arr[i] < 0) {
+//     temp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = temp;
+//     j++;
+//   }
+//   i++;
+// }
+// console.log(`Sorted array is: ${arr}`);
