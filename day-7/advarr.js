@@ -1,4 +1,4 @@
-const prompt = require("prompt-sync")();
+// const prompt = require("prompt-sync")();
 
 // let arr = [1, 2, 3, 4, 5];
 // let copy = arr[arr.length - 1];
@@ -140,20 +140,73 @@ const prompt = require("prompt-sync")();
 
 // let arr = [0, 1, 0, 1, 0, 1];
 // let arr = [2, 0, 2, 1, 1, 0];
-let arr = [2, 0, 1];
-let i = 0;
-let j = 0;
-let k = arr.length - 1;
+// let arr = [2, 0, 1];
+// let i = 0;
+// let j = 0;
+// let k = arr.length - 1;
 
-while (i <= k) {
-  if (arr[i] === 0) {
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-    j++;
-    i++;
-  } else if (arr[i] === 2) {
-    [arr[i], arr[k]] = [arr[k], arr[i]];
-    k--;
-  } else i++;
-}
+// while (i <= k) {
+//   if (arr[i] === 0) {
+//     [arr[i], arr[j]] = [arr[j], arr[i]];
+//     j++;
+//     i++;
+//   } else if (arr[i] === 2) {
+//     [arr[i], arr[k]] = [arr[k], arr[i]];
+//     k--;
+//   } else i++;
+// }
 
-console.log(arr);
+// Maximum SubArray | Kedane's Algorigthm
+// let arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+// let i = 0;
+// let sum = 0;
+// let max = -Infinity;
+// for (let i = 0; i <= arr.length; i++) {
+//   sum += arr[i];
+//   max = Math.max(max, sum);
+//   if (sum < 0) {
+//     sum = 0;
+//   }
+// }
+
+// Majority Element | Moore's Algorithm
+// let arr = [6, 5, 5];
+// let ans = arr[0];
+// let count = 1;
+// let i = 1;
+// while (i <= arr.length) {
+//   if (count == 0) {
+//     ans = arr[i];
+//     count = 1;
+//   } else if (arr[i] == ans) count++;
+//   else count--;
+//   i++;
+// }
+
+// Trapping Rain Water
+
+let height = [4, 2, 0, 3, 2, 5];
+
+const trap = function (height) {
+  let left = new Array(height.length);
+  let right = new Array(height.length);
+  let maxLeft = height[0];
+  let maxRight = height[height.length - 1];
+  ((left[0] = maxLeft), (right[right.length - 1] = maxRight));
+
+  for (let i = 1; i < height.length; i++) {
+    maxLeft = Math.max(height[i], maxLeft);
+    left[i] = maxLeft;
+  }
+
+  for (let i = height.length - 2; i >= 0; i--) {
+    maxRight = Math.max(height[i], maxRight);
+    right[i] = maxRight;
+  }
+  let ans = 0;
+
+  for (let i = 0; i < height.length; i++) {
+    ans += Math.min(left[i], right[i]) - height[i];
+  }
+  return ans;
+};
